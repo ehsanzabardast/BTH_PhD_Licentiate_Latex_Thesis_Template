@@ -1,0 +1,170 @@
+\documentclass[10pt, b5paper]{extbook}
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps,.tif,.tiff}
+\usepackage[pdfborder={0 0 0}]{hyperref} 
+\usepackage{eurosym}
+\usepackage{todonotes}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{fancyhdr} 
+\usepackage{pdfpages}
+\usepackage[utf8x]{inputenc}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{longtable,lscape}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption, subcaption}
+\usepackage{paralist}
+\usepackage{lscape}
+\usepackage{placeins}
+\usepackage[noadjust]{cite}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{framed, multido}
+\newcommand{\mytextbox}[2][6]{
+\begin{framed}
+\noindent#2%
+\multido{\i=1+1}{#1}{\newline …}
+\end{framed}}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{color,soul}
+\usepackage{ragged2e}
+\usepackage{arydshln}
+\usepackage{footnote}
+\usepackage{algorithm2e}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage[makeroom]{cancel}
+\usepackage{bibentry}
+\usepackage{bibtopic}
+\usepackage[T1]{fontenc}
+\usepackage[all]{nowidow}
+\widowpenalty10000
+\clubpenalty10000
+\usepackage{bigstrut}
+	\setlength\bigstrutjot{3pt}
+\usepackage[most]{tcolorbox}
+
+% % % % % define new command \mnote{...} for marginal notes % % % %
+\setlength{\marginparwidth}{30mm}
+\newcommand{\mnote}[1]{\marginpar{%
+      \vskip-\baselineskip
+      \raggedright\small
+      \itshape\hrule\smallskip\tiny{#1}\par\smallskip\hrule}}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\definecolor{LightGray}{gray}{0.85}
+
+%define new command \footnotereferences for references to footnotes
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+% Table of Contents Depth
+\setcounter{tocdepth}{1}
+
+\pagestyle{fancy} 
+% with this we ensure that the chapter and section 
+% headings are in lowercase. 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
+\fancyhf{} % delete current header and footer 
+\fancyhead[LE,RO]{\bfseries\thepage} 
+\fancyhead[LO]{\bfseries\rightmark} 
+\fancyhead[RE]{\bfseries\leftmark} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\addtolength{\headheight}{0.4pt} % space for the rule 
+\fancypagestyle{plain}{% 
+    \fancyhead{} % get rid of headers on plain pages 
+    \renewcommand{\headrulewidth}{0pt} % and the line 
+} 
+
+%\addbibresource{Thesis2017.bib} 
+
+
+\begin{document}
+
+\frontmatter
+
+\includepdf[pages=1-4]{frontmatter/flyleaf.pdf}
+\include{frontmatter/title}
+
+\pagestyle{fancy} 
+% with this we ensure that the chapter and section 
+% headings are in lowercase. 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
+\fancyhf{} % delete current header and footer 
+\fancyhead[LE,RO]{\bfseries\thepage} 
+\fancyhead[LO]{\bfseries\rightmark} 
+\fancyhead[RE]{\bfseries\leftmark} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\addtolength{\headheight}{0.4pt} % space for the rule 
+\fancypagestyle{plain}{% 
+    \fancyhead{} % get rid of headers on plain pages 
+    \renewcommand{\headrulewidth}{0pt} % and the line 
+}
+
+\clearpage
+\phantomsection
+
+\include{frontmatter/abstract}
+\include{frontmatter/acknowledgements}
+\include{frontmatter/papers}
+
+\tableofcontents
+\include{frontmatter/abbreviations}
+\listoffigures
+\listoftables
+\underline{}
+\mainmatter
+
+\include{ch1_intro/text}
+
+
+%\bibliographystyle{acm}
+%\begin{btSect}{intro/referencesS}
+%\chapter*{References}
+%\label{intro/references}
+%\btPrintCited
+%\end{btSect}
+
+\backmatter
+
+\bibliographystyle{acm}
+\include{backmatter/bibliography}
+
+
+
+\backmatter
+
+
+\pagestyle{fancy} 
+% with this we ensure that the chapter and section 
+% headings are in lowercase. 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
+\fancyhf{} % delete current header and footer 
+\fancyhead[LE,RO]{\bfseries\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\addtolength{\headheight}{0.4pt} % space for the rule 
+\fancypagestyle{plain}{% 
+    \fancyhead{} % get rid of headers on plain pages 
+    \renewcommand{\headrulewidth}{0pt} % and the line 
+}
+
+
+\end{document}
