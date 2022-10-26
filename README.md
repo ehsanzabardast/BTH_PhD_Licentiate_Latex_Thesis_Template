@@ -11,3 +11,5 @@ The template is also on Overleaf as a project (read-only) that can be duplicated
 The project might not compile in the first run. Recompile after the first try.
 
 You might need to clear the cached files on Overleaf from time to time.
+
+If you are using Overleaf, change the TeX Live Version to 2021.
